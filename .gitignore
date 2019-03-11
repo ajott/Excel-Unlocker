@@ -18,6 +18,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Gitignore files other than this one
+*.gitignore
+
 # =========================
 # Operating System Files
 # =========================
