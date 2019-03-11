@@ -1,0 +1,13 @@
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlockerVisual.exe.config
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlockerVisual.exe
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlockerVisual.pdb
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlocker.exe
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlocker.pdb
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\bin\Debug\ExcelUnlocker.exe.config
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.csprojResolveAssemblyReference.cache
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.EUVisual.resources
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.Properties.Resources.resources
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.csproj.GenerateResource.Cache
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.csproj.CoreCompileInputs.cache
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.exe
+C:\Users\ottaj\source\repos\ExcelUnlocker\ExcelUnlockerVisual\obj\Debug\ExcelUnlockerVisual.pdb
