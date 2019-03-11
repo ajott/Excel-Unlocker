@@ -11,7 +11,7 @@ This is a lightweight, portable (requires no installation) C# application that i
 ### Methodology
 
 Modern Excel workbooks are cleverly-hiding ZIP archives containing separate XML files for each worksheet. The worksheet XML files themselves will have a `<SheetProtection>` tag containing the hashed password, among other things.
-If this tage is removed, the worksheet will no longer be protected - not just without a password, but it will not be locked at all.
+If this tag is removed, the worksheet will no longer be protected - not just without a password, but it will not be locked at all.
 As removing this protection is a consistent, reproducible procedure, it can be easily automated. So I did just that!
 
 The Excel Unlocker, written in C#, will take a workbook, extract it into C:\Temp, remove the `<SheetProtection>` tag from all worksheets, and re-zip it back into the original format (.xlsx or .xlsm) in the original directory. 
