@@ -82,6 +82,9 @@ namespace ExcelUnlockerVisual {
             currentProgress += 10;
             progress.Report(currentProgress);
 
+            // Removes workbook-level structure protection
+            RemoveWorkbookProtection(directoryPath + "\\workBook\\xl\\workbook.xml");
+
             // Searches in the decompiled workbook's xl directory for worksheets, and
             string[] worksheets = Directory.GetFiles(directoryPath + "\\workBook\\xl\\worksheets");
 
@@ -92,7 +95,7 @@ namespace ExcelUnlockerVisual {
                 RemoveSheetProtection(worksheet);
                 currentProgress += worksheetProgress;
                 progress.Report(currentProgress);
-            }
+            }            
 
             // Recompiles the workbook with the newly unprotected sheets
             ZipFile.CreateFromDirectory(directoryPath + "\\workBook", directoryPath + "\\Book1Mod.zip");
@@ -135,6 +138,21 @@ namespace ExcelUnlockerVisual {
 
             }
             doc.Save(fileName);
+        }
+
+        static void RemoveWorkbookProtection(string fileName) {
+            var docWorkbook = new System.Xml.XmlDocument();
+            docWorkbook.Load(fileName);
+            XmlNodeList protections = docWorkbook.GetElementsByTagName("workbookProtection");
+            try {
+                foreach (XmlNode element in protections) {
+                    element.ParentNode.RemoveChild(element);
+                }
+            }
+            catch {
+
+            }
+            docWorkbook.Save(fileName);
         }
 
         static int IndexOfValidFileName(string[] args) {
