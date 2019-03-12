@@ -1,6 +1,6 @@
 # Excel Unlocker Visual
 
-This is a lightweight, portable (requires no installation) C# application that is used to remove worksheet and VBA protection from Microsoft Excel `.xlsx` and `.xlsm` files.
+This is a lightweight, portable (requires no installation) C# application that is used to remove worksheet and VBA protection from Microsoft Excel `.xlsx` and `.xlsm` files. On request from reddit users /u/doomlord12 and /u/ItsJustAnotherDay-, I have added functionality to handle `.xlam` files (Excel Add-Ins)
 
 &nbsp;
 #### [Download it here!](https://github.com/ajott/Excel-Unlocker/raw/master/ExcelUnlockerVisual.exe)

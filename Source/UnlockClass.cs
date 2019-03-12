@@ -40,9 +40,7 @@ namespace ExcelUnlockerVisual {
 
             // Gets the file extension from the filename
             string fileExtension = Path.GetExtension(filePath);
-
-
-            // Each step is documented here.
+            
 
             // Uses the C:\Temp\... path from earlier, and makes the working directory
             Directory.CreateDirectory(directoryPath);
@@ -62,11 +60,18 @@ namespace ExcelUnlockerVisual {
             if (unlockVBA) {
                 if (File.Exists(directoryPath + "\\workBook\\xl\\vbaProject.bin")) {
                     try {
+                        // Reads vbaProject.bin
                         byte[] buf = File.ReadAllBytes(directoryPath + "\\workBook\\xl\\vbaProject.bin");
+
+                        // Encodes the binary as hex, which allows us to edit the three hex couplets below
                         var str = new SoapHexBinary(buf).ToString();
 
+
+                        // Find the VBA protection key ("DPB") and replaces it with a nothing key ("DBx")
+                        // This causes the VBA editor to go through recovery and delete protection
                         str = str.Replace("445042", "444278");
 
+                        // Writes the hex back to binary into the vbaProject.bin file
                         File.WriteAllBytes(directoryPath + "\\workBook\\xl\\vbaProject.bin", SoapHexBinary.Parse(str).Value);
                     }
                     catch {
@@ -77,7 +82,7 @@ namespace ExcelUnlockerVisual {
             currentProgress += 10;
             progress.Report(currentProgress);
 
-            // Searches in the decompiled workbook's xl director for worksheets, and
+            // Searches in the decompiled workbook's xl directory for worksheets, and
             string[] worksheets = Directory.GetFiles(directoryPath + "\\workBook\\xl\\worksheets");
 
             worksheetProgress = 50 / worksheets.Length;
@@ -134,7 +139,7 @@ namespace ExcelUnlockerVisual {
 
         static int IndexOfValidFileName(string[] args) {
             foreach (string argument in args) {
-                if (Path.GetExtension(argument) == ".xlsx" || Path.GetExtension(argument) == ".xlsm") {
+                if (Path.GetExtension(argument) == ".xlsx" || Path.GetExtension(argument) == ".xlsm" || Path.GetExtension(argument) == ".xlam") {
                     return Array.IndexOf(args, argument);
                 }
             }

@@ -25,20 +25,20 @@ namespace ExcelUnlockerVisual {
         public void ChooseFile() {
             string workingFilePath = "c:\\";
 
-            if (Path.GetExtension(tbFilePath.Text) == ".xlsm" || Path.GetExtension(tbFilePath.Text) == ".xlsx") {
+            if (Path.GetExtension(tbFilePath.Text) == ".xlsm" || Path.GetExtension(tbFilePath.Text) == ".xlsx" || Path.GetExtension(tbFilePath.Text) == ".xlam") {
                 workingFilePath = Path.GetDirectoryName(tbFilePath.Text);
             }
 
 
             OpenFileDialog ofdFilePath = new OpenFileDialog {
                 InitialDirectory = workingFilePath,
-                Filter = "Excel workbook (*.xlsx; *.xlsm)|*.xlsx; *.xlsm",
+                Filter = "Excel workbook/add-in (*.xlsx; *.xlsm, *.xlam)|*.xlsx; *.xlsm; *.xlam",
                 RestoreDirectory = true
             };
 
             if (ofdFilePath.ShowDialog() == DialogResult.OK) {
                 tbFilePath.Text = ofdFilePath.FileName;
-                if (Path.GetExtension(tbFilePath.Text) == ".xlsm") {
+                if (Path.GetExtension(tbFilePath.Text) == ".xlsm" || Path.GetExtension(tbFilePath.Text) == ".xlam") {
                     cbUnlockVBA.Enabled = true;
                 }
             }
